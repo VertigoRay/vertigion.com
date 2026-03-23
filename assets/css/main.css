@@ -333,3 +333,37 @@ body {
   .post-list-item { flex-wrap: wrap; }
   .post-list-item .post-tag { margin-left: 0; }
 }
+
+/* ============ TAGS ============ */
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 99px;
+  background: rgba(45, 212, 191, 0.08);
+  color: var(--accent-2);
+  border: 1px solid rgba(45, 212, 191, 0.2);
+}
+
+/* ============ POST HERO IMAGE ============ */
+.post-hero {
+  margin-bottom: 2rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.post-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 400px;
+  object-fit: cover;
+}

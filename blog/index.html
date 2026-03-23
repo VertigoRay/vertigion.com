@@ -6,7 +6,7 @@ permalink: /blog/
 <div class="container">
   <div class="blog-header">
     <h1>Blog</h1>
-    <p>Security, homelab, and whatever else I'm thinking about.</p>
+    <p>Security, homelab, PowerShell, and whatever else I'm thinking about. {{ site.posts | size }} posts since 2009.</p>
   </div>
 
   <ul class="post-list">
@@ -14,8 +14,12 @@ permalink: /blog/
     <li class="post-list-item">
       <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      {% if post.categories.first %}
-      <span class="post-tag">{{ post.categories.first }}</span>
+      {% assign first_tag = post.tags | first %}
+      {% assign first_cat = post.categories | first %}
+      {% if first_tag %}
+      <span class="post-tag">{{ first_tag }}</span>
+      {% elsif first_cat %}
+      <span class="post-tag">{{ first_cat }}</span>
       {% endif %}
     </li>
     {% else %}
