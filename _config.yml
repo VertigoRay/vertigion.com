@@ -1,0 +1,43 @@
+title: VertigoRay
+description: Ray Piller — Security architect, homelab tinkerer, occasional writer.
+url: "https://vertigion.com"
+baseurl: ""
+
+author:
+  name: Ray Piller
+  email: ray@pillers.us
+
+# Build settings
+theme: null
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Ray Piller"
+
+# Markdown
+markdown: kramdown
+highlighter: rouge
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - README.md

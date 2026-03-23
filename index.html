@@ -1,0 +1,31 @@
+---
+layout: default
+title: Home
+---
+<div class="container">
+  <section class="home-hero">
+    <h1>Ray Piller</h1>
+    <p>Senior Security Architect. Homelab tinkerer. Healthcare cybersecurity.<br>
+    Writing about what I'm building and breaking.</p>
+  </section>
+
+  <section class="home-section">
+    <div class="section-label">Recent Posts</div>
+    <ul class="post-list">
+      {% for post in site.posts limit:5 %}
+      <li class="post-list-item">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        {% if post.categories.first %}
+        <span class="post-tag">{{ post.categories.first }}</span>
+        {% endif %}
+      </li>
+      {% else %}
+      <li class="post-list-item">
+        <time>—</time>
+        <span style="color: var(--text-muted); font-size: 0.875rem;">Posts coming soon.</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>
